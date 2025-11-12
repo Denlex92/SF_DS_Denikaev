@@ -1,27 +1,36 @@
+from sympy import *
 
 
+# Определяем символы
+x, y, w = symbols('x y w')
 
-import pandas as pd
+# Целевая ф
+f_target = 4*x + 8*y
+print('Целевая функция: f =', f_target)
 
+# Ф ограничений
+constraint = y**2 - 2*x*y + 5
+print('Ограничение:', constraint, '= 0')
 
+# Ф Лагранжа
+L = 4*x + 8*y + w*(y**2 - 2*x*y + 5)
+print('Функция Лагранжа: L =', L)
 
+# Частные производные
+L_x = L.diff(x)
+print('∂L/∂x =', L_x, '= 0')
 
-income = [478, 512, 196]
-expenses = [156, 130, 270]
-years = [2018, 2019, 2020]
+L_y = L.diff(y)
+print('∂L/∂y =', L_y, '= 0')
 
+L_w = L.diff(w)
+print('∂L/∂w =', L_w, '= 0')
 
-def create_companyDF(income, expenses, years):
-    df = pd.DataFrame({'Income': income,'Expenses': expenses}, index=years)
-    return df
-def get_profit(df,year):
-    if year not in df.index:
-        return None
-    income = df.loc[year, 'Income']
-    expenses = df.loc[year, 'Expenses']
-    profit = income - expenses
-    print(f"Income: {income}")
-    print(f"expenses: {expenses}")
-    return profit
+# Решение системы
+solutions = solve([L_x, L_y, L_w], [x, y, w])
+print('\nСтационарные точки:')
 
-print(get_profit(year = 2018, df = create_companyDF([612, 516, 329, 158], [136,163,250,361], [2017,2018,2019,2020])))
+# Вывод результата
+for i, sol in enumerate(solutions, 1):
+    print(f'Точка {i}: x = {sol[0]}, y = {sol[1]}, w = {sol[2]}')
+    print(f'f(x, y) = {4*sol[0] + 8*sol[1]}')
