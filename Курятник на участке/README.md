@@ -61,26 +61,30 @@
 Шаг 1: Подготовка окружения
 
 # Установка всех необходимых компонентов
+```python
 !pip install supervision opencv-python pillow matplotlib
 !pip install inference-sdk requests numpy
+```
 Шаг 2: Минимальная конфигурация
 # Всего две настройки для начала работы
+```python
 TEST_IMAGE = "https://i.ibb.co/RGsG2tmC/1487344021120679825.jpg"  # изображение
 ROBOFLOW_KEY = "V7IEaJCQ6iSNFL1l5oa9"  #  API ключ
-
+```
 # Инициализация системы
+```python
 from Chickenguard_system import ChickenGuardSystem
 
 system = ChickenGuardSystem(api_key=ROBOFLOW_KEY)
 results = system.analyze_threat(image_url=TEST_IMAGE)
 system.display_results(results)
-
+```
 
 # Детальная настройка
 **Конфигурационные параметры**
 
 # Расширенная конфигурация системы
-
+```python
 CONFIG = {
     "target_predators": ["wolf", "fox", "marten", "weasel"],
     "ultrasound_frequencies": {
@@ -96,24 +100,24 @@ CONFIG = {
         "low_risk": 50      # Метры от вольера
     }
 }
-
+```
 
 **Источники изображений**
 Система поддерживает различные источники:
 
 
 **1. URL изображения (для тестирования)**
-
+```python
 IMAGE_URL = "https://example.com/camera.jpg"
-
+```
 **2. RTSP поток (для реальных камер)**
-
+```python
 RTSP_STREAM = "rtsp://admin:password@192.168.1.100:554/stream1"
-
+```
 **3. Локальный файл**
-
+```python
 LOCAL_FILE = "path/to/your/image.jpg"
-
+```
 
 
 # Расширение функционала
@@ -122,22 +126,22 @@ LOCAL_FILE = "path/to/your/image.jpg"
 **Интеграция с внешними системами**
 
 # Пример интеграции с Telegram
-
+```python
 def send_telegram_alert(predator_type, count):
     """Отправка уведомления в Telegram"""
     import telebot  
     bot = telebot.TeleBot("YOUR_BOT_TOKEN")
     message = f"🚨 Обнаружен {predator_type} ({count} особей)"
     bot.send_message(chat_id="YOUR_CHAT_ID", text=message)
-
+```
 # Пример интеграции с SMS
 
-
+```python
 def send_sms_alert(predator_type):
     """Отправка SMS уведомления"""
     # Код для интеграции с SMS-шлюзом
     pass
-
+```
 # Технические требования
 Минимальная конфигурация:
 Процессор: 2+ ядра
