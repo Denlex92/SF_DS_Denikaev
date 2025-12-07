@@ -76,10 +76,11 @@ results = system.analyze_threat(image_url=TEST_IMAGE)
 system.display_results(results)
 
 
-# Детальная настройка**
-# Конфигурационные параметры
+# Детальная настройка
+**Конфигурационные параметры**
 
-# Расширенная конфигурация системы
+**Расширенная конфигурация системы**
+
 CONFIG = {
     "target_predators": ["wolf", "fox", "marten", "weasel"],
     "ultrasound_frequencies": {
@@ -95,23 +96,27 @@ CONFIG = {
         "low_risk": 50      # Метры от вольера
     }
 }
-Источники изображений
+
+
+**Источники изображений**
 Система поддерживает различные источники:
 
 
-# 1. URL изображения (для тестирования)
+**1. URL изображения (для тестирования)**
 IMAGE_URL = "https://example.com/camera.jpg"
 
-# 2. RTSP поток (для реальных камер)
+**2. RTSP поток (для реальных камер)**
 RTSP_STREAM = "rtsp://admin:password@192.168.1.100:554/stream1"
 
-# 3. Локальный файл
+**3. Локальный файл**
 LOCAL_FILE = "path/to/your/image.jpg"
 
 
 
 # Расширение функционала
-# Интеграция с внешними системами
+
+
+**Интеграция с внешними системами**
 
 # Пример интеграции с Telegram
 def send_telegram_alert(predator_type, count):
