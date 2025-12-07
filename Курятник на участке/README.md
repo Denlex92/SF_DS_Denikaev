@@ -119,15 +119,18 @@ LOCAL_FILE = "path/to/your/image.jpg"
 **Интеграция с внешними системами**
 
 # Пример интеграции с Telegram
+
+
 def send_telegram_alert(predator_type, count):
     """Отправка уведомления в Telegram"""
-    import telebot
-    
+    import telebot  
     bot = telebot.TeleBot("YOUR_BOT_TOKEN")
     message = f"🚨 Обнаружен {predator_type} ({count} особей)"
     bot.send_message(chat_id="YOUR_CHAT_ID", text=message)
 
 # Пример интеграции с SMS
+
+
 def send_sms_alert(predator_type):
     """Отправка SMS уведомления"""
     # Код для интеграции с SMS-шлюзом
