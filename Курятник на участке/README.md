@@ -81,6 +81,8 @@ system.display_results(results)
 
 **Расширенная конфигурация системы**
 
+
+
 CONFIG = {
     "target_predators": ["wolf", "fox", "marten", "weasel"],
     "ultrasound_frequencies": {
@@ -103,12 +105,15 @@ CONFIG = {
 
 
 **1. URL изображения (для тестирования)**
+
 IMAGE_URL = "https://example.com/camera.jpg"
 
 **2. RTSP поток (для реальных камер)**
+
 RTSP_STREAM = "rtsp://admin:password@192.168.1.100:554/stream1"
 
 **3. Локальный файл**
+
 LOCAL_FILE = "path/to/your/image.jpg"
 
 
@@ -119,7 +124,6 @@ LOCAL_FILE = "path/to/your/image.jpg"
 **Интеграция с внешними системами**
 
 # Пример интеграции с Telegram
-
 
 def send_telegram_alert(predator_type, count):
     """Отправка уведомления в Telegram"""
