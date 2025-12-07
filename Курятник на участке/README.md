@@ -64,6 +64,8 @@ from Chickenguard_system import ChickenGuardSystem
 system = ChickenGuardSystem(api_key=ROBOFLOW_KEY)
 results = system.analyze_threat(image_url=TEST_IMAGE)
 system.display_results(results)
+
+
 **Детальная настройка**
 # Конфигурационные параметры
 
