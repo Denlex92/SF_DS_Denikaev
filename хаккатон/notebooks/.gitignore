@@ -1,20 +1,20 @@
-# --- Python ---
+
 __pycache__/
 *.py[cod]
 *$py.class
 
-# Виртуальное окружение
+
 .venv/
 venv/
 env/
 
-# Логи и временные файлы
+
 *.log
 *.tmp
 *.swp
 *.swo
 
-# Кэш и артефакты
+
 *.egg-info/
 .dist/
 build/
@@ -25,28 +25,26 @@ dist/
 .pytest_cache/
 .ipynb_checkpoints/
 
-# --- Jupyter ---
+
 *.ipynb_checkpoints
 .ipynb_checkpoints/
 
-# --- IDE / редакторы ---
-# VS Code
+
 .vscode/
 
-# PyCharm / IDEA
+
 .idea/
 
-# --- OS ---
-# macOS
+
 .DS_Store
 
-# Windows
+
 Thumbs.db
 Desktop.ini
 
-# --- Данные проекта (если не хотите пушить сырые данные) ---
+
 data/*.csv
 data/*.pkl
 
-# --- Модели (если хотите держать только код) ---
+
 models/*.pkl
